@@ -1,0 +1,129 @@
+[gd_scene load_steps=3 format=3 uid="uid://v753qdweteb0"]
+
+[ext_resource type="Texture2D" uid="uid://61ffgj8q3jax" path="res://Illustration17 (1).PNG" id="1_62e2m"]
+[ext_resource type="Texture2D" uid="uid://cejun5q3tnxir" path="res://Illustration17 (2).PNG" id="2_qtu10"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 11.0
+offset_right = 1.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start Button" type="TextureButton" parent="."]
+texture_repeat = 3
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41319445
+anchor_top = 0.5493827
+anchor_right = 0.5874566
+anchor_bottom = 0.75000006
+offset_bottom = -3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_62e2m")
+texture_pressed = ExtResource("2_qtu10")
+texture_hover = ExtResource("2_qtu10")
+ignore_texture_size = true
+stretch_mode = 6
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Start Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.375
+offset_top = -19.99997
+offset_right = 112.625
+offset_bottom = 22.00003
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.1511145
+scale = Vector2(1.105817, 0.9161405)
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="Quit Button" type="TextureButton" parent="."]
+texture_repeat = 3
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07552084
+anchor_top = 0.7376543
+anchor_right = 0.24978298
+anchor_bottom = 0.9382716
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.12392485
+texture_normal = ExtResource("1_62e2m")
+texture_pressed = ExtResource("2_qtu10")
+texture_hover = ExtResource("2_qtu10")
+ignore_texture_size = true
+stretch_mode = 6
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Quit Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.13035
+offset_top = -34.584293
+offset_right = 98.86966
+offset_bottom = 7.4157104
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.2144313
+scale = Vector2(1.105817, 0.9161405)
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="Credits Button" type="TextureButton" parent="."]
+texture_repeat = 3
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.76736104
+anchor_top = 0.7469135
+anchor_right = 0.9416233
+anchor_bottom = 0.94753075
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.028398164
+texture_normal = ExtResource("1_62e2m")
+texture_pressed = ExtResource("2_qtu10")
+texture_hover = ExtResource("2_qtu10")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Credits Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.05426
+offset_top = -40.16358
+offset_right = 99.94574
+offset_bottom = 1.8364258
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.2548748
+scale = Vector2(0.9168472, 0.88617224)
+theme_override_font_sizes/font_size = 30
+text = "Credits"
