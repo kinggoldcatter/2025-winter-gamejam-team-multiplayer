@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var pics : Array[Sprite2D] 
 
 func _process(delta: float) -> void:
 	if %MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id():
@@ -15,3 +16,10 @@ func _process(delta: float) -> void:
 			await get_tree().create_timer(.3).timeout
 			%Flash.hide()
 			
+			var random_image: Sprite2D = pics.pick_random()
+			random_image.show()
+			await get_tree().create_timer(1.2).timeout
+			random_image.hide()
+			
+
+#@rpc("any_peer","call_local")

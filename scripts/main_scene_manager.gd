@@ -1,6 +1,9 @@
 extends Node2D
 
 @onready var PlayerScene: PackedScene = preload("res://scenes/entities/player.tscn")
+@onready var PlayerScene2: PackedScene = preload("res://scenes/entities/player2.tscn")
+@onready var PlayerScene3: PackedScene = preload("res://scenes/entities/player3.tscn")
+@onready var PlayerScene4: PackedScene = preload("res://scenes/entities/player4.tscn")
 @onready var MainCam: PhantomCamera2D = %MainPCam
 @onready var enemy_spawn: Marker2D = %EnemySpawn
 
@@ -11,7 +14,16 @@ func _ready() -> void:
 	var index: int = 0
 	for PId in GameManager.Players:
 		
-		var CurrentPlayer: Player = PlayerScene.instantiate()
+		var CurrentPlayer: Player
+		
+		if index == 0:
+			CurrentPlayer = PlayerScene.instantiate()
+		if index == 1:
+			CurrentPlayer = PlayerScene2.instantiate()
+		if index == 2:
+			CurrentPlayer = PlayerScene3.instantiate()
+		if index == 3:
+			CurrentPlayer = PlayerScene4.instantiate()
 		
 		if index == 0 :
 			GameManager.host_authority = GameManager.Players[PId].id as int
@@ -24,14 +36,14 @@ func _ready() -> void:
 		CurrentPlayer.name = str(GameManager.Players[PId].id)
 		CurrentPlayer.get_name_tag().text = GameManager.Players[PId].name
 		
-		add_child(CurrentPlayer)
+		%Players.add_child(CurrentPlayer)
 		
 		for Spawn:Node2D in get_tree().get_nodes_in_group("PlayerSpawnPoint"):
 			if Spawn.name == str(index):
 				CurrentPlayer.global_position = Spawn.global_position
 		
 		index += 1
-	for i in range(5) :
+	for i in range(1000) :
 		await get_tree().create_timer(5.0).timeout
 		var test_enemy: Node = enemy_scene.instantiate()
 		add_child(test_enemy)

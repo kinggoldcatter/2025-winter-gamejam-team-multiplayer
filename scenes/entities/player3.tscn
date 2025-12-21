@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dnbi55qxsb8hf"]
+
+[ext_resource type="PackedScene" uid="uid://djflucblwmob6" path="res://scenes/entities/player.tscn" id="1_xj4aa"]
+[ext_resource type="Texture2D" uid="uid://dwgswjduxyiwq" path="res://Assets/player_images/p3/PlayerThree_Front_Idle_4.png" id="2_k6soa"]
+
+[node name="Player" unique_id=174493301 instance=ExtResource("1_xj4aa")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1245949472]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_k6soa")

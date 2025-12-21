@@ -30,6 +30,12 @@ tween_resource = SubResource("Resource_rurhu")
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1233074421]
+spawn_path = NodePath("../Players")
+
+[node name="Players" type="Node2D" parent="." unique_id=1511728170]
+unique_name_in_owner = true
+
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=12735034]
 
 [node name="0" type="Marker2D" parent="SpawnPoints" unique_id=972685305 groups=["PlayerSpawnPoint"]]

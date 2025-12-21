@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://tvqtjinl83qv" path="res://Small Sign UI.png" id="3_cqjrg"]
 [ext_resource type="Texture2D" uid="uid://dmrivwl12dm88" path="res://SIGNPRESSED2.png" id="4_e2xy7"]
 [ext_resource type="FontFile" uid="uid://bx8baqyi6fkp4" path="res://Assets/higher-jump/Higher Jump.ttf" id="5_fimr5"]
+[ext_resource type="AudioStream" uid="uid://dmo50gm8osid2" path="res://sound/coldsnap_main_theme.wav" id="6_7r1g0"]
 
 [sub_resource type="GDScript" id="GDScript_u7cqb"]
 script/source = "extends Node
@@ -190,6 +191,10 @@ theme_override_fonts/font = ExtResource("5_fimr5")
 theme_override_font_sizes/font_size = 30
 text = "Quit 
 Game"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1614535464]
+stream = ExtResource("6_7r1g0")
+autoplay = true
 
 [connection signal="pressed" from="Join Lobby" to="." method="_on_join_lobby_pressed"]
 [connection signal="pressed" from="Join Local" to="." method="_on_join_local_pressed"]

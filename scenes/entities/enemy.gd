@@ -4,14 +4,18 @@ var movement_speed: float = 150.0
 var movement_target_position: Vector2 = Vector2(60.0,180.0)
 @export var target_player: Node2D
 
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@export var bodies: Array[Texture2D]
+
 
 func _ready() -> void:
 	$MultiplayerSynchronizer.set_multiplayer_authority(GameManager.host_authority)
+	
+	$Sprite2D.texture = bodies.pick_random()
 
 	if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id():
 		set_process(false)
 		return
+		
 	
 	
 	var players: Array[Node] = get_tree().get_nodes_in_group("player")

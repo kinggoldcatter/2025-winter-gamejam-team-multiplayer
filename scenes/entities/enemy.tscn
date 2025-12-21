@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://e8itdr3mcydm" path="res://scenes/entities/enemy.gd" id="1_67neu"]
 [ext_resource type="Texture2D" uid="uid://ceu5t6hf1rne3" path="res://Assets/opp_images/Past.png" id="2_67neu"]
+[ext_resource type="Texture2D" uid="uid://4mkx13b68ahg" path="res://Assets/opp_images/Future.png" id="2_defa4"]
+[ext_resource type="Texture2D" uid="uid://c40q18bosh8fb" path="res://Assets/opp_images/Present.png" id="4_jr1g6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_67neu"]
 radius = 53.0
@@ -16,6 +18,7 @@ properties/1/replication_mode = 1
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1873507852 groups=["enemy"]]
 script = ExtResource("1_67neu")
+bodies = Array[Texture2D]([ExtResource("2_defa4"), ExtResource("2_67neu"), ExtResource("4_jr1g6")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1108705516]
 scale = Vector2(0.02, 0.02)

@@ -6,6 +6,17 @@
 [ext_resource type="Script" uid="uid://d3b5ngjlndv7a" path="res://scenes/entities/photo_tool.gd" id="3_42nxq"]
 [ext_resource type="AudioStream" uid="uid://c387yv27tbync" path="res://sound/camera_01_short.wav" id="5_5u6hq"]
 [ext_resource type="AudioStream" uid="uid://boftm0vwe32lr" path="res://sound/penguin_caught_01.wav" id="6_d4qa6"]
+[ext_resource type="Texture2D" uid="uid://447bv3gpwmqw" path="res://Assets/Pics/Cold_Snap_Picture_Future_01.png" id="7_1yk18"]
+[ext_resource type="Texture2D" uid="uid://bdl73hsx1dx6r" path="res://Assets/Pics/Cold_Snap_Picture_Future_02.png" id="8_b4o2o"]
+[ext_resource type="Texture2D" uid="uid://crw04np0je7id" path="res://Assets/Pics/Cold_Snap_Picture_Future_03.png" id="9_yr3on"]
+[ext_resource type="Texture2D" uid="uid://dwjkmqqywvnwm" path="res://Assets/Pics/Cold_Snap_Picture_Past_01.png" id="10_2ngu4"]
+[ext_resource type="Texture2D" uid="uid://bv6ss03228pnn" path="res://Assets/Pics/Cold_Snap_Picture_Past_02.png" id="11_jv5ih"]
+[ext_resource type="Texture2D" uid="uid://ca6qoyjsiitem" path="res://Assets/Pics/Cold_Snap_Picture_Past_03.png" id="12_n36er"]
+[ext_resource type="Texture2D" uid="uid://bkq0klwngsnxs" path="res://Assets/Pics/Cold_Snap_Picture_Past_04.png" id="13_d745t"]
+[ext_resource type="Texture2D" uid="uid://cfusfa5frc16n" path="res://Assets/Pics/Cold_Snap_Picture_Present_01.png" id="14_qc1tv"]
+[ext_resource type="Texture2D" uid="uid://mxqqtuhrik11" path="res://Assets/Pics/Cold_Snap_Picture_Present_02.png" id="15_xe83n"]
+[ext_resource type="Texture2D" uid="uid://g8qr87y8p327" path="res://Assets/Pics/Cold_Snap_Picture_Present_04.png" id="16_cwche"]
+[ext_resource type="Texture2D" uid="uid://d15mro12nt3b1" path="res://Assets/Pics/Cold_Snap_Picture_Present_03.png" id="17_yv3je"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ie0h"]
 radius = 25.0
@@ -55,10 +66,11 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 replication_config = SubResource("SceneReplicationConfig_08t41")
 
-[node name="PhotoTool" type="Area2D" parent="." unique_id=1052717633]
+[node name="PhotoTool" type="Area2D" parent="." unique_id=1052717633 node_paths=PackedStringArray("pics")]
 position = Vector2(-232, -87)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("3_42nxq")
+pics = [NodePath("../Pictures/ColdSnapPictureFuture01"), NodePath("../Pictures/ColdSnapPictureFuture02"), NodePath("../Pictures/ColdSnapPictureFuture03"), NodePath("../Pictures/ColdSnapPicturePast01"), NodePath("../Pictures/ColdSnapPicturePast02"), NodePath("../Pictures/ColdSnapPicturePast03"), NodePath("../Pictures/ColdSnapPicturePast04"), NodePath("../Pictures/ColdSnapPicturePresent01"), NodePath("../Pictures/ColdSnapPicturePresent02"), NodePath("../Pictures/ColdSnapPicturePresent04"), NodePath("../Pictures/ColdSnapPicturePresent03")]
 
 [node name="Photoshot" type="Sprite2D" parent="PhotoTool" unique_id=1513485081]
 scale = Vector2(0.99999994, 0.99999994)
@@ -86,3 +98,60 @@ stream = ExtResource("5_5u6hq")
 [node name="MobSound" type="AudioStreamPlayer2D" parent="PhotoTool" unique_id=1298435048]
 unique_name_in_owner = true
 stream = ExtResource("6_d4qa6")
+
+[node name="Pictures" type="Node2D" parent="." unique_id=534384297]
+
+[node name="ColdSnapPictureFuture01" type="Sprite2D" parent="Pictures" unique_id=1057377403]
+visible = false
+position = Vector2(67, -18)
+texture = ExtResource("7_1yk18")
+
+[node name="ColdSnapPictureFuture02" type="Sprite2D" parent="Pictures" unique_id=468435011]
+visible = false
+position = Vector2(-8, 78)
+texture = ExtResource("8_b4o2o")
+
+[node name="ColdSnapPictureFuture03" type="Sprite2D" parent="Pictures" unique_id=2146022785]
+visible = false
+position = Vector2(305, -130)
+texture = ExtResource("9_yr3on")
+
+[node name="ColdSnapPicturePast01" type="Sprite2D" parent="Pictures" unique_id=1557717634]
+visible = false
+position = Vector2(-326, -194)
+texture = ExtResource("10_2ngu4")
+
+[node name="ColdSnapPicturePast02" type="Sprite2D" parent="Pictures" unique_id=409511885]
+visible = false
+position = Vector2(175, 270)
+texture = ExtResource("11_jv5ih")
+
+[node name="ColdSnapPicturePast03" type="Sprite2D" parent="Pictures" unique_id=1287034198]
+visible = false
+position = Vector2(201, -16)
+texture = ExtResource("12_n36er")
+
+[node name="ColdSnapPicturePast04" type="Sprite2D" parent="Pictures" unique_id=1383879574]
+visible = false
+position = Vector2(-340, 236)
+texture = ExtResource("13_d745t")
+
+[node name="ColdSnapPicturePresent01" type="Sprite2D" parent="Pictures" unique_id=1607450789]
+visible = false
+position = Vector2(436, -190)
+texture = ExtResource("14_qc1tv")
+
+[node name="ColdSnapPicturePresent02" type="Sprite2D" parent="Pictures" unique_id=1876833589]
+visible = false
+position = Vector2(351, 230)
+texture = ExtResource("15_xe83n")
+
+[node name="ColdSnapPicturePresent04" type="Sprite2D" parent="Pictures" unique_id=1770919935]
+visible = false
+position = Vector2(-276, -76)
+texture = ExtResource("16_cwche")
+
+[node name="ColdSnapPicturePresent03" type="Sprite2D" parent="Pictures" unique_id=657846808]
+visible = false
+position = Vector2(351, -108)
+texture = ExtResource("17_yv3je")
