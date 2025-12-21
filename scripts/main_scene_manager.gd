@@ -10,7 +10,7 @@ func _ready() -> void:
 		
 		var CurrentPlayer: Player = PlayerScene.instantiate()
 		
-		if GameManager.Players[PId].id == multiplayer.get_unique_id():
+		if GameManager.Players[PId].id as int == multiplayer.get_unique_id():
 			MainCam.follow_target = CurrentPlayer.get_cam_spot()
 	
 		

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://kmnowcvn5116"]
+
+[ext_resource type="Script" uid="uid://bb5psl4f3qdgt" path="res://Client.gd" id="1_is8c1"]
+[ext_resource type="Script" uid="uid://c82uxrovvicw1" path="res://Server.gd" id="2_k268y"]
+
+[node name="OnlineJoin" type="Control" unique_id=383795416]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Client" type="Node" parent="." unique_id=1374931656]
+script = ExtResource("1_is8c1")
+
+[node name="Server" type="Node" parent="." unique_id=109145286]
+script = ExtResource("2_k268y")
+
+[node name="Start Client" type="Button" parent="." unique_id=1011590341]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 24.0
+offset_right = 126.0
+offset_bottom = 55.0
+text = "Start Client"
+
+[node name="Start Server" type="Button" parent="." unique_id=964041413]
+layout_mode = 0
+offset_left = 1037.0
+offset_top = 23.0
+offset_right = 1137.0
+offset_bottom = 54.0
+text = "Start Server"
+
+[node name="JoinLobby" type="Button" parent="." unique_id=1241371878]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 133.0
+offset_right = 172.0
+offset_bottom = 164.0
+text = "Join Lobby"
+
+[node name="StartGame" type="Button" parent="." unique_id=1701355806]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 76.0
+offset_right = 173.0
+offset_bottom = 107.0
+text = "StartLobby"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1970090148]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 201.0
+offset_top = 137.0
+offset_right = 536.0
+offset_bottom = 168.0
+
+[connection signal="button_down" from="Start Client" to="Client" method="_on_start_client_button_down"]
+[connection signal="button_down" from="Start Server" to="Server" method="_on_start_server_button_down"]
+[connection signal="button_down" from="JoinLobby" to="Client" method="_on_join_lobby_button_down"]
+[connection signal="button_down" from="StartGame" to="Client" method="_on_button_button_down"]

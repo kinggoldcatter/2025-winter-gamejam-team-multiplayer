@@ -12,6 +12,7 @@ script = ExtResource("3_y3j0m")
 script = ExtResource("1_bw6k5")
 
 [node name="MainCam" type="Camera2D" parent="." unique_id=198036494]
+editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="MainCam" unique_id=718043518]
 process_priority = 300
@@ -25,6 +26,7 @@ top_level = true
 script = ExtResource("2_bw6k5")
 follow_mode = 1
 tween_resource = SubResource("Resource_rurhu")
+draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=12735034]

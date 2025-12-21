@@ -1,3 +1,56 @@
-[gd_scene format=3 uid="uid://bohjht7286eln"]
+[gd_scene format=3 uid="uid://dmvt6a7dkb5he"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" uid="uid://dglsmj7h0p0jt" path="res://scripts/multiplayer_controller.gd" id="1_v0j6l"]
+
+[node name="LanLobbyScreen" type="Control" unique_id=959258781]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v0j6l")
+
+[node name="HostButton" type="Button" parent="." unique_id=201402179]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 81.0
+offset_right = 324.0
+offset_bottom = 155.0
+text = "Host"
+
+[node name="JoinButton" type="Button" parent="." unique_id=2050816091]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 81.0
+offset_right = 631.0
+offset_bottom = 155.0
+text = "Join"
+
+[node name="StartButton" type="Button" parent="." unique_id=2138730922]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 81.0
+offset_right = 939.0
+offset_bottom = 155.0
+text = "Start Game"
+
+[node name="Name" type="LineEdit" parent="." unique_id=1399727128]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 28.0
+offset_right = 481.0
+offset_bottom = 64.0
+text = "Photographer"
+
+[node name="NameLabel" type="Label" parent="." unique_id=835168697]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 28.0
+offset_right = 199.0
+offset_bottom = 51.0
+text = "Name:"
+
+[connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

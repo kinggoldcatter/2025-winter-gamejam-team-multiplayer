@@ -12,6 +12,10 @@ func _ready() -> void:
 	multiplayer.peer_disconnected.connect(peer_disconnected)
 	multiplayer.connected_to_server.connect(connected_to_server)
 	multiplayer.connection_failed.connect(connection_failed)
+	
+	if "--server" in OS.get_cmdline_args():
+		hostGame()
+	
 
 @rpc("any_peer","call_local")
 func start_game() -> void:
@@ -19,12 +23,34 @@ func start_game() -> void:
 	get_tree().root.add_child(scene)
 	self.hide()
 
+func hostGame() -> void:
+	peer = ENetMultiplayerPeer.new()
+	var error: Error = peer.create_server(port, 2)
+	if error != OK:
+		print("cannot host: " + str(error))
+		return
+	peer.get_host().compress(ENetConnection.COMPRESS_RANGE_CODER)
+	
+	multiplayer.set_multiplayer_peer(peer)
+	print("Waiting For Players!")
+
+func join_by_ip(ip: String) -> void:
+	peer = ENetMultiplayerPeer.new()
+	peer.create_client(ip, port)
+	peer.get_host().compress(ENetConnection.COMPRESS_RANGE_CODER)
+	multiplayer.set_multiplayer_peer(peer)
+
 # called from clients and server
 func peer_connected(id: int) -> void:
 	print("Player Connected " + str(id))
 
 func peer_disconnected(id: int) -> void:
-	print("Player Disonnected " + str(id))
+	print("Player Disconnected " + str(id))
+	GameManager.Players.erase(id)
+	var players: Array[Node] = get_tree().get_nodes_in_group("player")
+	for i in players:
+		if i.name == str(id):
+			i.queue_free()
 
 
 # called from clients
