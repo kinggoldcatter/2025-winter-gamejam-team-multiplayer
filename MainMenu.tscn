@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://v753qdweteb0"]
+[gd_scene format=3 uid="uid://v753qdweteb0"]
 
-[ext_resource type="Script" uid="uid://b2h236qudp4ll" path="res://control.gd" id="1_iwfq2"]
+[ext_resource type="Script" uid="uid://b2h236qudp4ll" path="res://main_menu.gd" id="1_iwfq2"]
 [ext_resource type="VideoStream" uid="uid://c5cpkpvvyvscx" path="res://splash_video.ogv" id="2_7r1g0"]
 [ext_resource type="Texture2D" uid="uid://tvqtjinl83qv" path="res://Small Sign UI.png" id="3_cqjrg"]
 [ext_resource type="Texture2D" uid="uid://dmrivwl12dm88" path="res://SIGNPRESSED2.png" id="4_e2xy7"]
@@ -10,7 +10,7 @@
 script/source = "extends Node
 "
 
-[node name="Menu Manager" type="Control"]
+[node name="Menu Manager" type="Control" unique_id=822297442]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iwfq2")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1588541878]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.19965278
@@ -39,7 +39,7 @@ loop = true
 script = SubResource("GDScript_u7cqb")
 metadata/_edit_use_anchors_ = true
 
-[node name="Join Lobby" type="TextureButton" parent="."]
+[node name="Join Lobby" type="TextureButton" parent="." unique_id=1694978512]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.013020833
@@ -55,7 +55,7 @@ texture_pressed = ExtResource("4_e2xy7")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Join Lobby"]
+[node name="Label" type="Label" parent="Join Lobby" unique_id=799216923]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -75,7 +75,8 @@ theme_override_font_sizes/font_size = 30
 text = "  Join 
 Lobby"
 
-[node name="Join Local" type="TextureButton" parent="."]
+[node name="Join Local" type="TextureButton" parent="." unique_id=1380181982]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2855903
@@ -94,7 +95,7 @@ stretch_mode = 0
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Join Local"]
+[node name="Label" type="Label" parent="Join Local" unique_id=1851737471]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -114,7 +115,7 @@ theme_override_font_sizes/font_size = 30
 text = "Join
 Local"
 
-[node name="Credits" type="TextureButton" parent="."]
+[node name="Credits" type="TextureButton" parent="." unique_id=686388436]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5746528
@@ -131,7 +132,7 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Credits"]
+[node name="Label" type="Label" parent="Credits" unique_id=952454463]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -150,7 +151,7 @@ theme_override_fonts/font = ExtResource("5_fimr5")
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
-[node name="Quit Game" type="TextureButton" parent="."]
+[node name="Quit Game" type="TextureButton" parent="." unique_id=131342695]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8888889
@@ -170,7 +171,7 @@ stretch_mode = 0
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Quit Game"]
+[node name="Label" type="Label" parent="Quit Game" unique_id=259849017]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

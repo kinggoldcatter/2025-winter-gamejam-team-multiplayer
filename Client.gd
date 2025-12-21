@@ -51,6 +51,8 @@ func _process(delta):
 				GameManager.Players = JSON.parse_string(data.players)
 				hostId = data.host
 				lobbyValue = data.lobbyValue
+				%LineEdit.text = data.lobbyValue
+				%StatusLable.text = "You are in a lobby!"
 				
 			if data.message == Utilities.Message.candidate:
 				if rtcPeer.has_peer(data.orgPeer):

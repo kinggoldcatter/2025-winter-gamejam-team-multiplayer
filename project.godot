@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2025-Winter-Gamejam"
-run/main_scene="uid://dmvt6a7dkb5he"
+run/main_scene="uid://v753qdweteb0"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,8 +22,8 @@ PhantomCameraManager="*uid://duq6jhf6unyis"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 
 [editor_plugins]

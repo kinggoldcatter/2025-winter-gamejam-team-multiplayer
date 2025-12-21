@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://kmnowcvn5116"]
 
 [ext_resource type="Script" uid="uid://bb5psl4f3qdgt" path="res://Client.gd" id="1_is8c1"]
+[ext_resource type="Script" uid="uid://bemobq52ppam3" path="res://scripts/online_join.gd" id="1_k268y"]
 [ext_resource type="Script" uid="uid://c82uxrovvicw1" path="res://Server.gd" id="2_k268y"]
 
 [node name="OnlineJoin" type="Control" unique_id=383795416]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k268y")
 
 [node name="Client" type="Node" parent="." unique_id=1374931656]
 script = ExtResource("1_is8c1")
@@ -39,7 +41,23 @@ offset_left = 33.0
 offset_top = 133.0
 offset_right = 172.0
 offset_bottom = 164.0
-text = "Join Lobby"
+text = "Join/Host Lobby"
+
+[node name="CopyCode" type="Button" parent="." unique_id=466463945]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 188.0
+offset_right = 530.0
+offset_bottom = 219.0
+text = "Copy Code"
+
+[node name="PasteCode" type="Button" parent="." unique_id=1021229175]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 188.0
+offset_right = 337.0
+offset_bottom = 219.0
+text = "Paste Code"
 
 [node name="StartGame" type="Button" parent="." unique_id=1701355806]
 layout_mode = 0
@@ -52,12 +70,23 @@ text = "StartLobby"
 [node name="LineEdit" type="LineEdit" parent="." unique_id=1970090148]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 201.0
-offset_top = 137.0
-offset_right = 536.0
-offset_bottom = 168.0
+offset_left = 196.0
+offset_top = 133.0
+offset_right = 531.0
+offset_bottom = 164.0
+
+[node name="StatusLable" type="Label" parent="." unique_id=1651960397]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 287.0
+offset_top = 23.0
+offset_right = 327.0
+offset_bottom = 46.0
+text = "You are not in a lobby!"
 
 [connection signal="button_down" from="Start Client" to="Client" method="_on_start_client_button_down"]
 [connection signal="button_down" from="Start Server" to="Server" method="_on_start_server_button_down"]
 [connection signal="button_down" from="JoinLobby" to="Client" method="_on_join_lobby_button_down"]
+[connection signal="pressed" from="CopyCode" to="." method="_on_copy_code_pressed"]
+[connection signal="pressed" from="PasteCode" to="." method="_on_paste_code_pressed"]
 [connection signal="button_down" from="StartGame" to="Client" method="_on_button_button_down"]
