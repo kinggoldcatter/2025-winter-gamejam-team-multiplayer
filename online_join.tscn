@@ -20,6 +20,7 @@ script = ExtResource("1_is8c1")
 script = ExtResource("2_k268y")
 
 [node name="Start Client" type="Button" parent="." unique_id=1011590341]
+visible = false
 layout_mode = 0
 offset_left = 31.0
 offset_top = 24.0
@@ -28,6 +29,7 @@ offset_bottom = 55.0
 text = "Start Client"
 
 [node name="Start Server" type="Button" parent="." unique_id=964041413]
+visible = false
 layout_mode = 0
 offset_left = 1037.0
 offset_top = 23.0
@@ -60,11 +62,13 @@ offset_bottom = 219.0
 text = "Paste Code"
 
 [node name="StartGame" type="Button" parent="." unique_id=1701355806]
+unique_name_in_owner = true
+visible = false
 layout_mode = 0
-offset_left = 34.0
-offset_top = 76.0
-offset_right = 173.0
-offset_bottom = 107.0
+offset_left = 35.0
+offset_top = 189.0
+offset_right = 174.0
+offset_bottom = 220.0
 text = "StartLobby"
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=1970090148]

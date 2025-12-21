@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c57jwfu7ofhcy"]
 
 [ext_resource type="Script" uid="uid://e8itdr3mcydm" path="res://scenes/entities/enemy.gd" id="1_67neu"]
-[ext_resource type="Texture2D" uid="uid://ccofgvrouhmfc" path="res://Assets/opp_images/opps.PNG" id="1_d7j71"]
+[ext_resource type="Texture2D" uid="uid://ceu5t6hf1rne3" path="res://Assets/opp_images/Past.png" id="2_67neu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_67neu"]
 radius = 53.0
@@ -14,17 +14,15 @@ properties/1/path = NodePath(".:position")
 properties/1/spawn = true
 properties/1/replication_mode = 1
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1873507852]
+[node name="Enemy" type="CharacterBody2D" unique_id=1873507852 groups=["enemy"]]
 script = ExtResource("1_67neu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1108705516]
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("1_d7j71")
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_67neu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1782005762]
 shape = SubResource("CircleShape2D_67neu")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1357534105]
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1292054281]
 replication_config = SubResource("SceneReplicationConfig_67neu")

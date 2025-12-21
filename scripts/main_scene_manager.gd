@@ -31,10 +31,11 @@ func _ready() -> void:
 				CurrentPlayer.global_position = Spawn.global_position
 		
 		index += 1
-	await get_tree().create_timer(5.0).timeout
-	var test_enemy: Node = enemy_scene.instantiate()
-	add_child(test_enemy)
-	test_enemy.global_position = enemy_spawn.global_position
+	for i in range(5) :
+		await get_tree().create_timer(5.0).timeout
+		var test_enemy: Node = enemy_scene.instantiate()
+		add_child(test_enemy)
+		test_enemy.global_position = enemy_spawn.global_position
 
 	
 	

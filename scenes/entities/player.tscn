@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://vbu3br3ey5tx" path="res://scenes/entities/player.gd" id="1_08t41"]
 [ext_resource type="Texture2D" uid="uid://ct051l51q88e4" path="res://Assets/player_images/p1/UPDATEDSPRITES_P1_3_FRONT.png" id="2_08t41"]
+[ext_resource type="Texture2D" uid="uid://boma51eb01qr5" path="res://Assets/Photoshot.PNG" id="3_1ie0h"]
+[ext_resource type="Script" uid="uid://d3b5ngjlndv7a" path="res://scenes/entities/photo_tool.gd" id="3_42nxq"]
+[ext_resource type="AudioStream" uid="uid://c387yv27tbync" path="res://sound/camera_01_short.wav" id="5_5u6hq"]
+[ext_resource type="AudioStream" uid="uid://boftm0vwe32lr" path="res://sound/penguin_caught_01.wav" id="6_d4qa6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ie0h"]
 radius = 25.0
@@ -11,6 +15,17 @@ height = 192.0
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath("PhotoTool:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42nxq"]
+size = Vector2(3010.0002, 2010.0002)
+
+[sub_resource type="Theme" id="Theme_5u6hq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4qa6"]
+bg_color = Color(0.93333334, 0.93333334, 0.93333334, 0.42745098)
 
 [node name="Player" type="CharacterBody2D" unique_id=174493301 groups=["player"]]
 script = ExtResource("1_08t41")
@@ -37,4 +52,37 @@ autowrap_mode = 2
 unique_name_in_owner = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=831038535]
+unique_name_in_owner = true
 replication_config = SubResource("SceneReplicationConfig_08t41")
+
+[node name="PhotoTool" type="Area2D" parent="." unique_id=1052717633]
+position = Vector2(-232, -87)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("3_42nxq")
+
+[node name="Photoshot" type="Sprite2D" parent="PhotoTool" unique_id=1513485081]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_1ie0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoTool" unique_id=1789771123]
+position = Vector2(-25.000122, -5.000061)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_42nxq")
+
+[node name="Flash" type="Panel" parent="PhotoTool" unique_id=727666541]
+unique_name_in_owner = true
+visible = false
+offset_left = -1979.9999
+offset_top = -1459.9998
+offset_right = 1909.9996
+offset_bottom = 1479.9998
+theme = SubResource("Theme_5u6hq")
+theme_override_styles/panel = SubResource("StyleBoxFlat_d4qa6")
+
+[node name="FlashSound" type="AudioStreamPlayer2D" parent="PhotoTool" unique_id=1177760382]
+unique_name_in_owner = true
+stream = ExtResource("5_5u6hq")
+
+[node name="MobSound" type="AudioStreamPlayer2D" parent="PhotoTool" unique_id=1298435048]
+unique_name_in_owner = true
+stream = ExtResource("6_d4qa6")

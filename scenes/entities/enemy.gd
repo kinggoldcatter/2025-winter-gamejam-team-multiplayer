@@ -18,16 +18,10 @@ func _ready() -> void:
 	set_target_player(players.pick_random())
 	
 
-
-func set_movement_target(movement_target: Vector2):
-	navigation_agent.target_position = movement_target
-
 func _physics_process(delta: float) -> void:
 	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
 		_apply_movment(delta)
 
-func _process(delta: float) -> void:
-	set_movement_target(target_player.position)
 	
 @rpc("any_peer","call_local")
 func set_target_player(player: Node) -> void:

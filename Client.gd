@@ -12,6 +12,10 @@ func _ready():
 	multiplayer.connected_to_server.connect(RTCServerConnected)
 	multiplayer.peer_connected.connect(RTCPeerConnected)
 	multiplayer.peer_disconnected.connect(RTCPeerDisconnected)
+	if "--server" not in OS.get_cmdline_args():
+		connectToServer("")
+	
+	
 #	$LoginWindow.CreateUser.connect(createUser)
 #	$LoginWindow.LoginUser.connect(loginUser)
 
@@ -53,6 +57,7 @@ func _process(delta):
 				lobbyValue = data.lobbyValue
 				%LineEdit.text = data.lobbyValue
 				%StatusLable.text = "You are in a lobby!"
+				%StartGame.show()
 				
 			if data.message == Utilities.Message.candidate:
 				if rtcPeer.has_peer(data.orgPeer):
@@ -146,7 +151,7 @@ func iceCandidateCreated(midName, indexName, sdpName, id):
 	pass
 
 func connectToServer(ip):
-	peer.create_client("ws://localhost:8915")
+	peer.create_client("ws://tgmcgn.zapto.org:8915")
 	print("started client")
 
 
