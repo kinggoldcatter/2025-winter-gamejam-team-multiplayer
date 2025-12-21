@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var PlayerScene: PackedScene = preload("res://scenes/entities/player.tscn")
 @onready var MainCam: PhantomCamera2D = %MainPCam
+@onready var enemy_spawn: Marker2D = %EnemySpawn
+
+var enemy_scene: PackedScene = preload("res://scenes/entities/enemy.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,3 +27,10 @@ func _ready() -> void:
 				CurrentPlayer.global_position = Spawn.global_position
 		
 		index += 1
+	await get_tree().create_timer(5.0).timeout
+	var test_enemy: Node = enemy_scene.instantiate()
+	add_child(test_enemy)
+	test_enemy.global_position = enemy_spawn.global_position
+
+	
+	

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch6hcjqpmlpe4"
-path="res://.godot/imported/rocks_snow.png-feea638612836bd3e01854d317e9c8b7.ctex"
+path="res://.godot/imported/rocks_snow.png-f0ca28b22abed695509352475b5dcda3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level/Assets/environment/rocks_small/rocks_snow.png"
-dest_files=["res://.godot/imported/rocks_snow.png-feea638612836bd3e01854d317e9c8b7.ctex"]
+source_file="res://Level Design/Level-design-main/Level/Assets/environment/rocks_small/rocks_snow.png"
+dest_files=["res://.godot/imported/rocks_snow.png-f0ca28b22abed695509352475b5dcda3.ctex"]
 
 [params]
 

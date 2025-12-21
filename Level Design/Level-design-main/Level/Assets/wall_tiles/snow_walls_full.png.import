@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byr05n2nh00ww"
-path="res://.godot/imported/snow_walls_full.png-4209ec78c044ab3067cfca19064f5e27.ctex"
+path="res://.godot/imported/snow_walls_full.png-b7b6eba4e58c57d86a030b9504168b77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level/Assets/wall_tiles/snow_walls_full.png"
-dest_files=["res://.godot/imported/snow_walls_full.png-4209ec78c044ab3067cfca19064f5e27.ctex"]
+source_file="res://Level Design/Level-design-main/Level/Assets/wall_tiles/snow_walls_full.png"
+dest_files=["res://.godot/imported/snow_walls_full.png-b7b6eba4e58c57d86a030b9504168b77.ctex"]
 
 [params]
 

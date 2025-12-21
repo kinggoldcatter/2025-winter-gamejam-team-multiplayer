@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://djflucblwmob6"]
 
 [ext_resource type="Script" uid="uid://vbu3br3ey5tx" path="res://scenes/entities/player.gd" id="1_08t41"]
-[ext_resource type="Texture2D" uid="uid://dyfohs773sby4" path="res://icon.svg" id="2_1ie0h"]
+[ext_resource type="Texture2D" uid="uid://ct051l51q88e4" path="res://Assets/player_images/p1/UPDATEDSPRITES_P1_3_FRONT.png" id="2_08t41"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_42nxq"]
-radius = 63.007935
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ie0h"]
+radius = 25.0
+height = 192.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_08t41"]
 properties/0/path = NodePath(".:position")
@@ -15,17 +16,18 @@ properties/0/replication_mode = 1
 script = ExtResource("1_08t41")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1245949472]
-texture = ExtResource("2_1ie0h")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_08t41")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=995223695]
-shape = SubResource("CircleShape2D_42nxq")
+shape = SubResource("CapsuleShape2D_1ie0h")
 
 [node name="NameLable" type="Label" parent="." unique_id=794841218]
 unique_name_in_owner = true
 offset_left = -54.0
-offset_top = -89.0
+offset_top = -123.0
 offset_right = 54.0
-offset_bottom = -66.0
+offset_bottom = -100.0
 text = "Photographer"
 horizontal_alignment = 1
 vertical_alignment = 1

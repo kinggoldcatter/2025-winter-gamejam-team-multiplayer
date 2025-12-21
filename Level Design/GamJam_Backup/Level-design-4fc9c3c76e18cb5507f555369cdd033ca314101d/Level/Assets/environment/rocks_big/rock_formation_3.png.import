@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c350sb11f003n"
-path="res://.godot/imported/rock_formation_3.png-694cc2e53454d2b173d3191c5b44acce.ctex"
+path="res://.godot/imported/rock_formation_3.png-6f40ac127e4c7262693b92e0f95f8699.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level/Assets/environment/rocks_big/rock_formation_3.png"
-dest_files=["res://.godot/imported/rock_formation_3.png-694cc2e53454d2b173d3191c5b44acce.ctex"]
+source_file="res://Level Design/GamJam_Backup/Level-design-4fc9c3c76e18cb5507f555369cdd033ca314101d/Level/Assets/environment/rocks_big/rock_formation_3.png"
+dest_files=["res://.godot/imported/rock_formation_3.png-6f40ac127e4c7262693b92e0f95f8699.ctex"]
 
 [params]
 

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://deb2tmgdkmu3h"]
+
+[ext_resource type="PackedScene" uid="uid://djflucblwmob6" path="res://scenes/entities/player.tscn" id="1_n6ogg"]
+[ext_resource type="Texture2D" uid="uid://cuv2tkrop1nlr" path="res://Assets/player_images/p2/PlayerTwo_DownIdle_6.png" id="2_bnfdn"]
+
+[node name="Player" unique_id=174493301 instance=ExtResource("1_n6ogg")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1245949472]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_bnfdn")

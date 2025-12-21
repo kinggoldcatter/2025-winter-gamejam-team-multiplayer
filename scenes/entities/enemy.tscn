@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c57jwfu7ofhcy"]
+
+[ext_resource type="Script" uid="uid://e8itdr3mcydm" path="res://scenes/entities/enemy.gd" id="1_67neu"]
+[ext_resource type="Texture2D" uid="uid://ccofgvrouhmfc" path="res://Assets/opp_images/opps.PNG" id="1_d7j71"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_67neu"]
+radius = 53.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_67neu"]
+properties/0/path = NodePath(".:target_player")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1873507852]
+script = ExtResource("1_67neu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1108705516]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_d7j71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1782005762]
+shape = SubResource("CircleShape2D_67neu")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1357534105]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1292054281]
+replication_config = SubResource("SceneReplicationConfig_67neu")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7cyw8ftgatgu"
-path="res://.godot/imported/tree_snow_2.png-fd9d9791c70e6856b8eda2c321d2e0fb.ctex"
+path="res://.godot/imported/tree_snow_2.png-af315e8cbcd8ea2b4cf7db95eb1d46a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level/Assets/environment/trees/tree_snow_2.png"
-dest_files=["res://.godot/imported/tree_snow_2.png-fd9d9791c70e6856b8eda2c321d2e0fb.ctex"]
+source_file="res://Level Design/GamJam_Backup/Level-design-4fc9c3c76e18cb5507f555369cdd033ca314101d/Level/Assets/environment/trees/tree_snow_2.png"
+dest_files=["res://.godot/imported/tree_snow_2.png-af315e8cbcd8ea2b4cf7db95eb1d46a5.ctex"]
 
 [params]
 
