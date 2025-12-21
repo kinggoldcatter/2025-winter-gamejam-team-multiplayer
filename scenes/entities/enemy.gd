@@ -6,39 +6,37 @@ var movement_target_position: Vector2 = Vector2(60.0,180.0)
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
-func _ready():
-	var players: Array[Node] = get_tree().get_nodes_in_group("player")
-	target_player = players.pick_random()
+func _ready() -> void:
+	$MultiplayerSynchronizer.set_multiplayer_authority(GameManager.host_authority)
+
+	if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id():
+		set_process(false)
+		return
 	
-	# These values need to be adjusted for the actor's speed
-	# and the navigation layout.
-	navigation_agent.path_desired_distance = 4.0
-	navigation_agent.target_desired_distance = 4.0
+	
+	var players: Array[Node] = get_tree().get_nodes_in_group("player")
+	set_target_player(players.pick_random())
+	
 
-	# Make sure to not await during _ready.
-	call_deferred("actor_setup")
-
-func actor_setup():
-	# Wait for the first physics frame so the NavigationServer can sync.
-	await get_tree().physics_frame
-
-	# Now that the navigation map is no longer empty, set the movement target.
-	set_movement_target(movement_target_position)
 
 func set_movement_target(movement_target: Vector2):
 	navigation_agent.target_position = movement_target
 
-func _physics_process(delta):
-	if navigation_agent.is_navigation_finished():
-		return
-
-	var current_agent_position: Vector2 = global_position
-	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-
-	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
-		
-	move_and_slide()
+func _physics_process(delta: float) -> void:
+	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
+		_apply_movment(delta)
 
 func _process(delta: float) -> void:
 	set_movement_target(target_player.position)
 	
+@rpc("any_peer","call_local")
+func set_target_player(player: Node) -> void:
+	target_player = player
+	
+func _apply_movment(delta: float) -> void:
+	if target_player != null:
+		
+		var player_direction: Vector2 = global_transform.origin.direction_to(target_player.global_transform.origin)
+		player_direction *= movement_speed
+		velocity = player_direction
+	move_and_slide()

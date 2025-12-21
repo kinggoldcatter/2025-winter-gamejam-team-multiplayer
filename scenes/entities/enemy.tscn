@@ -10,6 +10,9 @@ radius = 53.0
 properties/0/path = NodePath(".:target_player")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1873507852]
 script = ExtResource("1_67neu")

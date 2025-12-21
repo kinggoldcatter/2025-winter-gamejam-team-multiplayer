@@ -13,6 +13,10 @@ func _ready() -> void:
 		
 		var CurrentPlayer: Player = PlayerScene.instantiate()
 		
+		if index == 0 :
+			GameManager.host_authority = GameManager.Players[PId].id as int
+			%MobSpawner.set_multiplayer_authority(GameManager.Players[PId].id as int)
+		
 		if GameManager.Players[PId].id as int == multiplayer.get_unique_id():
 			MainCam.follow_target = CurrentPlayer.get_cam_spot()
 	
