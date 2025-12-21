@@ -1,0 +1,302 @@
+[gd_scene load_steps=8 format=3 uid="uid://v753qdweteb0"]
+
+[ext_resource type="Texture2D" uid="uid://61ffgj8q3jax" path="res://Illustration17 (1).PNG" id="1_62e2m"]
+[ext_resource type="Texture2D" uid="uid://cejun5q3tnxir" path="res://Illustration17 (2).PNG" id="2_qtu10"]
+[ext_resource type="Texture2D" uid="uid://tvqtjinl83qv" path="res://Small Sign UI.png" id="3_ee4bf"]
+[ext_resource type="VideoStream" uid="uid://c5cpkpvvyvscx" path="res://splash_video.ogv" id="3_iy58a"]
+[ext_resource type="Script" uid="uid://bs23st5jk64yp" path="res://Scripts.gd" id="4_6a6wx"]
+[ext_resource type="Texture2D" uid="uid://dmrivwl12dm88" path="res://SIGNPRESSED2.png" id="4_iy58a"]
+[ext_resource type="FontFile" uid="uid://bx8baqyi6fkp4" path="res://Assets/higher-jump/Higher Jump.ttf" id="4_kbped"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 11.0
+offset_right = 1.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start Button" type="TextureButton" parent="."]
+visible = false
+texture_repeat = 3
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41319445
+anchor_top = 0.5493827
+anchor_right = 0.5874566
+anchor_bottom = 0.75000006
+offset_bottom = -3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_62e2m")
+texture_pressed = ExtResource("2_qtu10")
+texture_hover = ExtResource("2_qtu10")
+ignore_texture_size = true
+stretch_mode = 6
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Start Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.375
+offset_top = -19.99997
+offset_right = 112.625
+offset_bottom = 22.00003
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.1511145
+scale = Vector2(1.105817, 0.9161405)
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="Quit Button" type="TextureButton" parent="."]
+visible = false
+texture_repeat = 3
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07552084
+anchor_top = 0.7376543
+anchor_right = 0.24978298
+anchor_bottom = 0.9382716
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.12392485
+texture_normal = ExtResource("1_62e2m")
+texture_pressed = ExtResource("2_qtu10")
+texture_hover = ExtResource("2_qtu10")
+ignore_texture_size = true
+stretch_mode = 6
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Quit Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.13035
+offset_top = -34.584293
+offset_right = 98.86966
+offset_bottom = 7.4157104
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.2144313
+scale = Vector2(1.105817, 0.9161405)
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="Credits Button" type="TextureButton" parent="."]
+visible = false
+texture_repeat = 3
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.76736104
+anchor_top = 0.7469135
+anchor_right = 0.9416233
+anchor_bottom = 0.94753075
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.028398164
+texture_normal = ExtResource("1_62e2m")
+texture_pressed = ExtResource("2_qtu10")
+texture_hover = ExtResource("2_qtu10")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Credits Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.05426
+offset_top = -40.16358
+offset_right = 99.94574
+offset_bottom = 1.8364258
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.2548748
+scale = Vector2(0.9168472, 0.88617224)
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_iy58a")
+autoplay = true
+expand = true
+loop = true
+script = ExtResource("4_6a6wx")
+
+[node name="Join Lobby" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.013020833
+anchor_top = 0.80246913
+anchor_right = 0.14756945
+anchor_bottom = 1.0123457
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.12727077
+scale = Vector2(0.7852047, 1.0267447)
+texture_normal = ExtResource("3_ee4bf")
+texture_pressed = ExtResource("4_iy58a")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Join Lobby"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.45449
+offset_top = -32.85961
+offset_right = 130.5455
+offset_bottom = 132.14038
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.04640254
+scale = Vector2(0.600597, 0.39988154)
+theme_override_fonts/font = ExtResource("4_kbped")
+theme_override_font_sizes/font_size = 30
+text = "  Join 
+Lobby"
+
+[node name="Join Local" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2855903
+anchor_top = 0.77623457
+anchor_right = 0.44618055
+anchor_bottom = 0.9861111
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.19040412
+scale = Vector2(0.7852047, 1.0267447)
+texture_normal = ExtResource("3_ee4bf")
+texture_pressed = ExtResource("4_iy58a")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Join Local"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.600697
+offset_top = -34.688072
+offset_right = 183.39929
+offset_bottom = 130.31192
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0075037396
+scale = Vector2(0.49510446, 0.39988154)
+theme_override_fonts/font = ExtResource("4_kbped")
+theme_override_font_sizes/font_size = 30
+text = "Join
+Local"
+
+[node name="Credits" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5746528
+anchor_top = 0.80401236
+anchor_right = 0.7352431
+anchor_bottom = 1.0138887
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.12727077
+scale = Vector2(0.7852047, 1.0267447)
+texture_normal = ExtResource("3_ee4bf")
+texture_pressed = ExtResource("4_iy58a")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.191082
+offset_top = -19.087273
+offset_right = 161.80891
+offset_bottom = 145.91272
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.04640254
+scale = Vector2(0.5005068, 0.39988154)
+theme_override_fonts/font = ExtResource("4_kbped")
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="Quit Game" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8888889
+anchor_top = 0.77160496
+anchor_right = 1.0494791
+anchor_bottom = 0.9814815
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.19040412
+scale = Vector2(0.7852047, 1.0267447)
+texture_normal = ExtResource("3_ee4bf")
+texture_pressed = ExtResource("4_iy58a")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Quit Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.600697
+offset_top = -34.688072
+offset_right = 183.39929
+offset_bottom = 130.31192
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0075037396
+scale = Vector2(0.49510446, 0.39988154)
+theme_override_fonts/font = ExtResource("4_kbped")
+theme_override_font_sizes/font_size = 30
+text = "Quit 
+Game"
