@@ -1,0 +1,196 @@
+[gd_scene load_steps=7 format=3 uid="uid://v753qdweteb0"]
+
+[ext_resource type="Script" uid="uid://b2h236qudp4ll" path="res://control.gd" id="1_iwfq2"]
+[ext_resource type="VideoStream" uid="uid://c5cpkpvvyvscx" path="res://splash_video.ogv" id="2_7r1g0"]
+[ext_resource type="Texture2D" uid="uid://tvqtjinl83qv" path="res://Small Sign UI.png" id="3_cqjrg"]
+[ext_resource type="Texture2D" uid="uid://dmrivwl12dm88" path="res://SIGNPRESSED2.png" id="4_e2xy7"]
+[ext_resource type="FontFile" uid="uid://bx8baqyi6fkp4" path="res://Assets/higher-jump/Higher Jump.ttf" id="5_fimr5"]
+
+[sub_resource type="GDScript" id="GDScript_u7cqb"]
+script/source = "extends Node
+"
+
+[node name="Menu Manager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 11.0
+offset_right = 1.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwfq2")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.19965278
+anchor_top = -0.047839507
+anchor_right = 1.1814237
+anchor_bottom = 1.0524691
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_7r1g0")
+autoplay = true
+expand = true
+loop = true
+script = SubResource("GDScript_u7cqb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Join Lobby" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.013020833
+anchor_top = 0.80246913
+anchor_right = 0.14756945
+anchor_bottom = 1.0123457
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.12727077
+scale = Vector2(0.7852047, 1.0267447)
+texture_normal = ExtResource("3_cqjrg")
+texture_pressed = ExtResource("4_e2xy7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Join Lobby"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.45449
+offset_top = -32.85961
+offset_right = 130.5455
+offset_bottom = 132.14038
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.04640254
+scale = Vector2(0.600597, 0.39988154)
+theme_override_fonts/font = ExtResource("5_fimr5")
+theme_override_font_sizes/font_size = 30
+text = "  Join 
+Lobby"
+
+[node name="Join Local" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2855903
+anchor_top = 0.77623457
+anchor_right = 0.44618055
+anchor_bottom = 0.9861111
+offset_bottom = 6.1035156e-05
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.19040412
+scale = Vector2(0.7852047, 1.0267447)
+texture_normal = ExtResource("3_cqjrg")
+texture_pressed = ExtResource("4_e2xy7")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Join Local"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.600697
+offset_top = -34.688072
+offset_right = 183.39929
+offset_bottom = 130.31192
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0075037396
+scale = Vector2(0.49510446, 0.39988154)
+theme_override_fonts/font = ExtResource("5_fimr5")
+theme_override_font_sizes/font_size = 30
+text = "Join
+Local"
+
+[node name="Credits" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5746528
+anchor_top = 0.80401236
+anchor_right = 0.7352431
+anchor_bottom = 1.0138887
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.12727077
+scale = Vector2(0.7852047, 1.0267447)
+texture_normal = ExtResource("3_cqjrg")
+texture_pressed = ExtResource("4_e2xy7")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.191082
+offset_top = -19.087273
+offset_right = 161.80891
+offset_bottom = 145.91272
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.04640254
+scale = Vector2(0.5005068, 0.39988154)
+theme_override_fonts/font = ExtResource("5_fimr5")
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="Quit Game" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8888889
+anchor_top = 0.77160496
+anchor_right = 1.0494791
+anchor_bottom = 0.9814815
+offset_right = -0.00012207031
+offset_bottom = -6.1035156e-05
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.19040412
+scale = Vector2(0.7852047, 1.0267447)
+texture_normal = ExtResource("3_cqjrg")
+texture_pressed = ExtResource("4_e2xy7")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Quit Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.600697
+offset_top = -34.688072
+offset_right = 183.39929
+offset_bottom = 130.31192
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0075037396
+scale = Vector2(0.49510446, 0.39988154)
+theme_override_fonts/font = ExtResource("5_fimr5")
+theme_override_font_sizes/font_size = 30
+text = "Quit 
+Game"
+
+[connection signal="pressed" from="Join Lobby" to="." method="_on_join_lobby_pressed"]
+[connection signal="pressed" from="Join Local" to="." method="_on_join_local_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Quit Game" to="." method="_on_quit_game_pressed"]
